@@ -17,6 +17,13 @@
           FROM TBL_MENU
          WHERE ORDERABLE_STATUS = 'Y'
     </select>
+    <select id="searchMenu" resultMap="menuResult">
+        SELECT
+            *
+          FROM TBL_MENU
+         WHERE
+            MENU_CODE = #{code}
+    </select>
 
     <insert id="insertMenu" parameterType="com.ohgiraffers.pos.menu.dto.MenuDTO">
         INSERT INTO TBL_MENU
@@ -50,5 +57,6 @@
         DELETE FROM TBL_MENU
          WHERE MENU_CODE = #{code}
     </delete>
+
 
 </mapper>

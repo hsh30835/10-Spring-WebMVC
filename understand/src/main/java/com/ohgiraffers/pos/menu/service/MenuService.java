@@ -37,12 +37,32 @@ public class MenuService {
     }
 
     public int updateMenu(MenuDTO menuDTO) {
-        int result = menuDao.insertMenu(menuDTO);
+        int result = menuDao.updateMenu(menuDTO);
         if(result <= 0){
             System.out.println("실패");
         }else{
             System.out.println("성공");
         }
         return result;
+    }
+
+    public int deleteMenu(MenuDTO menuDTO) {
+        int result = menuDao.deleteMenu(menuDTO);
+        if(result <= 0){
+            System.out.println("실패");
+        }else{
+            System.out.println("성공");
+        }
+
+        return result;
+    }
+
+    public MenuDTO searchMenu() {
+        MenuDTO menu = (MenuDTO) menuDao.searchMenu();
+
+        if(Objects.isNull(menu)){
+            System.out.println("exeception menus가 없네요");
+        }
+        return menu;
     }
 }

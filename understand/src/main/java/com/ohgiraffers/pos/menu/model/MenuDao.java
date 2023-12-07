@@ -10,4 +10,10 @@ public interface MenuDao {
     List<MenuDTO> selectAllMenu();
 
     int insertMenu(MenuDTO menuDTO);
+
+    int deleteMenu(MenuDTO menuDTO);
+
+    int updateMenu(MenuDTO menuDTO);
+
+    Object searchMenu();
 }
