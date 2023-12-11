@@ -24,13 +24,39 @@ public class MenuService {
         return menus;
     }
 
+
     public int insertMenu(MenuDTO menuDTO) {
         int result = menuDAO.insertMenu(menuDTO);
-        if(result>=0){
-            System.out.println("성공");
-        }else{
+        if(result <= 0){
             System.out.println("실패");
+        }else{
+            System.out.println("성공");
         }
         return result;
+    }
+
+    public int updateMenu(MenuDTO menuDTO) {
+        int result = menuDAO.updateMenu(menuDTO);
+        if(result <= 0){
+            System.out.println("실패");
+        }else{
+            System.out.println("성공");
+        }
+        return result;
+    }
+
+    public int deleteMenu(MenuDTO menuDTO) {
+        int result = menuDAO.deleteMenu(menuDTO);
+        if(result <= 0){
+            System.out.println("실패");
+        }else{
+            System.out.println("성공");
+        }
+        return result;
+    }
+
+    public MenuDTO searchMenu(MenuDTO menuDTO) {
+        MenuDTO menu = menuDAO.searchMenu(menuDTO);
+        return menu;
     }
 }

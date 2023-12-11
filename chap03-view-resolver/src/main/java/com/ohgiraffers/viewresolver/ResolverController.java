@@ -36,7 +36,7 @@ public class ResolverController {
         * 자동으로 모델에 추가되기 때문에 requestScope에서 값을 꺼내면 된다.
         * 세션에 임시로 값을 담고 소멸하는 방식이기 때문에 session에 동일한 키 값이 존재하지 않아야 한다.
         * */
-        rttr.addFlashAttribute("flashMessage1","redeirect attr 사용하여 redirect");
+        rttr.addFlashAttribute("flashMessage1","redirect attr 사용하여 redirect");
         return "redirect:/";
     }
 

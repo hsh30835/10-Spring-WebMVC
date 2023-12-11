@@ -5,13 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>추가</h3>
-    <form action="/menus/insert" method="post">
+<h3>수정</h3>
+    <form action="update" method="post">
+        코드 : <input type="number" name="code">
         이름 : <input type="text" name="name">
         가격 : <input type="number" name="price">
         카테고리코드 : <input type="number" name="categoryCode">
-        상태 : <input type="text" name="status">
-        <button type="submit">추가하기</button>
+        <button type="submit">수정하기</button>
     </form>
 </body>
 </html>

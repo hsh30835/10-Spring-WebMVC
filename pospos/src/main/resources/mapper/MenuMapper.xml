@@ -38,7 +38,8 @@
         #{name},
         #{price},
         #{categoryCode},
-        #{status}
+        'Y'
+<!--        #{status}-->
         )
     </insert>
 
@@ -49,7 +50,7 @@
         MENU_NAME = #{name},
         MENU_PRICE = #{price},
         CATEGORY_CODE = #{categoryCode},
-        ORDERABLE_STATUS = #{status}
+        ORDERABLE_STATUS = 'Y'
         WHERE
         MENU_CODE = #{code}
     </update>

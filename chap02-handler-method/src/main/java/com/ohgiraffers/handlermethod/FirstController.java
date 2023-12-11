@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("/first/*") //first의 모든 요청을 수행하겠다
 @SessionAttributes("id")
 public class FirstController {
-    /* 핸들러 메소드에 파라미터로 특정 몇 가지 타입을 선언하게 되면 핸들러 메소드 호출 시 인자로 값을 전다해 준다.
+    /* 핸들러 메소드에 파라미터로 특정 몇 가지 타입을 선언하게 되면 핸들러 메소드 호출 시 인자로 값을 전달해 준다.
     *
     * 컨트롤러 핸들러 메서드의 반환 값을 void로 설정하면 요청 주소가 view의 이름이 된다.
     * => /first/regist 요청이 들어오면 /first/regist 뷰로 응답한다.
@@ -99,7 +99,7 @@ public class FirstController {
     * DTO 같은 모델을 커맨드 객체로 전달받는다.
     * 테스트 하기 위해서는 DTO를 만든다.
     *
-    * @ModelAttribute의 경우 커맨드 객체를 생성항여 매개변수로 전달해 준 뒤 해당 인스턴스를 model에 담는다.
+    * @ModelAttribute의 경우 커맨드 객체를 생성하여 매개변수로 전달해 준 뒤 해당 인스턴스를 model에 담는다.
     * 화면에서 출력해보면 모델에 담겨진 값을 확인할 수 있다.
     *
     * 경우에 따라 폼에서 입력한 값을 다음 화면으로 바로 전달해야 하는 경우가 발생하는데 이 때 유용하게 사용할 수 있다.
