@@ -10,15 +10,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
 
-@Service
+@Service //사용자의 요청을 어떻게 처리할지 방식을 정함
 public class MemberService {
 
     @Autowired
     private UserMapper userMapper;
     @Autowired
-    private PasswordEncoder encoder;
+    private PasswordEncoder encoder; //PasswordEncoder는 비밀번호 암호화
 
-    @Transactional
+    @Transactional //롤백을 가능하게 해주는 일종의 보험역할
     public int regist(SignupDTO signupDTO){
         signupDTO.setUserPass(encoder.encode(signupDTO.getUserPass()));
         int result = userMapper.regist(signupDTO);

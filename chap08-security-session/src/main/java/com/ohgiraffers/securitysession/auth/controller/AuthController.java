@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/auth")
 public class AuthController {
 
-    @GetMapping("/login")
+    @GetMapping("/login") //이거 빠지면 무한루프됨
     public void login(){
     }
 
