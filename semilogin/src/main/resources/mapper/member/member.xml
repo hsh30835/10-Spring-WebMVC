@@ -63,7 +63,7 @@
           FROM USER_TABLE
          WHERE USER_EMAIL = #{userEmail}
     </select>
-    <select id="checkEmail" parameterType="com.ohgiraffers.semilogin.user.model.dto.LoginUserDTO" resultType="int">
+    <select id="emailCheck" parameterType="com.ohgiraffers.semilogin.user.model.dto.SignupDTO" resultType="int">
         SELECT
             COUNT(*)
           FROM USER_TABLE

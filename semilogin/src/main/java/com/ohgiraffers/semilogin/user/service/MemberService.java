@@ -38,8 +38,9 @@ public class MemberService {
         return result;
     }
 
-    public int checkEmail(String userEmail) {
-        int result = userMapper.checkEmail(userEmail);
+    public int emailCheck(String userEmail) {
+        System.out.println("서비스 체크");
+        int result = userMapper.emailCheck(userEmail);
         return result;
     }
 }

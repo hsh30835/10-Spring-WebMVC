@@ -7,10 +7,10 @@ import org.apache.ibatis.annotations.Mapper;
 import java.lang.reflect.Member;
 
 @Mapper
-public interface UserMapper {
-    LoginUserDTO findByUserNickName(String userNickName);
+    public interface UserMapper {
+        LoginUserDTO findByUserNickName(String userNickName);
 
-    int regist(SignupDTO signupDTO);
+        int regist(SignupDTO signupDTO);
 
-    int checkEmail(String userEmail);
+        int emailCheck(String userEmail);
 }

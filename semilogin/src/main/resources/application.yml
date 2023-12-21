@@ -4,7 +4,11 @@ spring:
     url: jdbc:mysql://localhost:3306/petales
     username: petales
     password: petales
+  mvc:
+    servlet:
+      load-on-startup: 1
 
 mybatis:
   mapper-locations: classpath:resources/mapper/**/*.xml
   config-location: classpath:mapper/mapper-config.xml
+

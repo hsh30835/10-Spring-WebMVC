@@ -39,9 +39,11 @@ public class UserController {
 
     // 이메일 중복체크
     @ResponseBody
-    @PostMapping("checkEmail")
-    public int checkEmail(@RequestParam("userEmail") String userEmail){
-        int result = memberService.checkEmail(userEmail);
+    @PostMapping("/emailCheck")
+    public int emailCheck(@RequestParam("userEmail") String userEmail){
+        System.out.println("컨트롤러 체크");
+
+        int result = memberService.emailCheck(userEmail);
         return result;
     }
 
