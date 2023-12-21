@@ -63,4 +63,10 @@
           FROM USER_TABLE
          WHERE USER_EMAIL = #{userEmail}
     </select>
+    <select id="checkEmail" parameterType="com.ohgiraffers.semilogin.user.model.dto.LoginUserDTO" resultType="int">
+        SELECT
+            COUNT(*)
+          FROM USER_TABLE
+         WHERE USER_EMAIL = #{userEmail}
+    </select>
 </mapper>

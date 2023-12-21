@@ -37,4 +37,12 @@ public class UserController {
         return mv;
     }
 
+    // 이메일 중복체크
+    @ResponseBody
+    @PostMapping("checkEmail")
+    public int checkEmail(@RequestParam("userEmail") String userEmail){
+        int result = memberService.checkEmail(userEmail);
+        return result;
+    }
+
 }

@@ -12,4 +12,5 @@ public interface UserMapper {
 
     int regist(SignupDTO signupDTO);
 
+    int checkEmail(String userEmail);
 }

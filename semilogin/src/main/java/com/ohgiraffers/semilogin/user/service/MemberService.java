@@ -37,4 +37,9 @@ public class MemberService {
 
         return result;
     }
+
+    public int checkEmail(String userEmail) {
+        int result = userMapper.checkEmail(userEmail);
+        return result;
+    }
 }
