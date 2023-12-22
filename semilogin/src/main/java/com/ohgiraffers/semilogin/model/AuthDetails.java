@@ -1,11 +1,13 @@
-package com.ohgiraffers.semilogin.auth.model;
+package com.ohgiraffers.semilogin.model;
 
-import com.ohgiraffers.semilogin.user.model.dto.LoginUserDTO;
+import com.ohgiraffers.semilogin.dto.LoginUserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+// 사용자 세부 정보
 
 public class AuthDetails implements UserDetails {
     private LoginUserDTO loginUserDTO;

@@ -1,7 +1,10 @@
-package com.ohgiraffers.semilogin.common;
+package com.ohgiraffers.semilogin.model;
+
+// 권한 받을 사용자의 변수명을 지정해주는 기능
 
 public enum UserAuth {
-    USER("USER"), ADMIN("ADMIN");
+    USER("USER"), // 유저
+    ADMIN("ADMIN"); // 관리자
     private String auth;
 
     UserAuth(String auth) {

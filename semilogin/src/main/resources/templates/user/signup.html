@@ -1,117 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>회원가입</title>-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <h1>회원가입</h1>-->
-
-<!--&lt;!&ndash;    <div>&ndash;&gt;-->
-<!--&lt;!&ndash;        <input type="email" id="userEmail" name="userEmail" placeholder="이메일" size="60">&ndash;&gt;-->
-<!--&lt;!&ndash;        <button type="button" onclick="checkEmail()" >중복확인</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--    <label for="userEmail">이메일</label>-->
-<!--    <input type="email" id="userEmail" name="userEmail">-->
-<!--    &lt;!&ndash; 이메일 중복확인 버튼&ndash;&gt;-->
-<!--    <button class="checkEmail" type="button" id="checkEmail"-->
-<!--            onClick="checkEmail()">-->
-<!--        중복확인-->
-<!--    </button>-->
-
-<!--&lt;!&ndash;        <div class="dupliCheckDiv">&ndash;&gt;-->
-<!--&lt;!&ndash;            <small class="d-none dupliMail">중복된 이메일입니다</small>&ndash;&gt;-->
-<!--&lt;!&ndash;            <small class="d-none availableMail">사용 가능한 이메일입니다.</small>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--        <div>-->
-<!--            <input type="text" name="userNickName" placeholder="닉네임" size="60">-->
-<!--            <input type="button" onclick="checkNickName()" value="중복확인"> <br>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <input type="password" name="password" placeholder="비밀번호" id="password1" size="60">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <input type="password" name="checkPassword" placeholder="비밀번호 확인" id="password2" size="60">-->
-<!--            <input type="button" onclick="test()" value="확인하기"> <br> &lt;!&ndash;비밀번호가 같은지 확인&ndash;&gt;-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash;    권한 :&ndash;&gt;-->
-<!--        &lt;!&ndash;    <select name="auth">&ndash;&gt;-->
-<!--        &lt;!&ndash;        <option value="USER">일반회원</option>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <option value="ADMIN">관리자</option>&ndash;&gt;-->
-<!--        &lt;!&ndash;    </select>&ndash;&gt;-->
-<!--        &lt;!&ndash;    <br>&ndash;&gt;-->
-
-<!--        &lt;!&ndash;    펫코드 : <input type="number" name="petCode"/> <br>&ndash;&gt;-->
-<!--        &lt;!&ndash;    <button  >회원가입</button> &lt;!&ndash;disabled="disabled"는 버튼 비활성화&ndash;&gt;&ndash;&gt;-->
-<!--    <form th:action="@{/user/signup}" method="post">-->
-<!--        <button type="submit" class="btn signUpBtn" id="target_btn" disabled="disabled" >회원가입</button>-->
-<!--    </form>-->
-<!--    <button onclick="back()">취소</button>-->
-
-
-<!--<script th:inline="javascript">-->
-<!--    const message = [[${message}]];-->
-<!--    if(message){-->
-<!--        alert(message);-->
-<!--    }-->
-<!--</script>-->
-<!--<script type="text/javascript">-->
-<!--    &lt;!&ndash;입력한 비밀번호와 입력한 비밀번호 확인이 일치할 시 회원가입 버튼이 활성화되고 그렇지 않으면 활성화가 안됨&ndash;&gt;-->
-<!--    function test(){-->
-<!--        console.log("dddd")-->
-<!--        var v1 = document.getElementById('password1').value; &lt;!&ndash;password1의 값을 v1로 지정함&ndash;&gt;-->
-<!--        var v2 = document.getElementById('password2').value; &lt;!&ndash;password2의 값을 v2로 지정함&ndash;&gt;-->
-<!--        console.log(v1, v2)-->
-<!--        if(v1 != v2) { &lt;!&ndash;v1와 v2의 값이 다르다면&ndash;&gt;-->
-<!--            alert("비밀번호가 일치하지 않습니다");-->
-<!--            const target = document.getElementById('target_btn');-->
-<!--            target.disabled = true; &lt;!&ndash;버튼이 비활성화 되있는 상태에서 true라서 그대로 비활성화 되있음&ndash;&gt;-->
-<!--            return false;-->
-<!--        } else {-->
-<!--            alert("비밀번호가 일치합니다");-->
-<!--            const target = document.getElementById('target_btn');-->
-<!--            target.disabled = false; &lt;!&ndash;버튼이 비활성화 되있는 상태에서 false로 바껴서 활성화가 됨&ndash;&gt;-->
-<!--            return true;-->
-<!--        }-->
-<!--    }-->
-
-<!--    &lt;!&ndash;이메일 중복체크&ndash;&gt;-->
-<!--    function checkEmail() {-->
-<!--        console.log("124")-->
-<!--        $.ajax({-->
-<!--            url: "/user/checkEmail",-->
-<!--            type: "POST",-->
-<!--            dataType: "JSON",-->
-<!--            contentType: "application/json; charset=UTF-8",-->
-<!--            data: {"userEmail": $("#userEmail").val()},-->
-<!--            success: function (data) {-->
-<!--                if (data == 1) {-->
-<!--                    alert("중복된 이메일입니다.");-->
-<!--                } else if (data == 0) {-->
-<!--                    $("#checkEmail").attr("value", "Y");-->
-<!--                    alert("사용 가능한 이메일입니다.")-->
-
-<!--                }-->
-<!--            }-->
-
-<!--        })-->
-<!--        console.log("747")-->
-<!--    }-->
-
-<!--    function back(){-->
-<!--        history.back();-->
-<!--    } &lt;!&ndash;뒤로 가기&ndash;&gt;-->
-
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -123,17 +9,18 @@
 <h1>회원가입</h1>
 
 <form th:action="@{/user/signup}" method="post" modelAttribute="signupDTO" id="signupForm">
-    <!--modelAttribute는 매핑하기 위해 쓰는것 id는 아래서 쓸까봐 미리 생성 해놨음-->
-    <div>
+
+        <img th:src="@{/image/userImgs/envelope-solid.svg}">
         <!--이메일 입력-->
         <label for="inputUserEmail">이메일</label>
         <input type="email" id="inputUserEmail" name="userEmail">
         <!--이메일 중복 체크-->
-        <button class="emailCheck" type="button" id="emailCheck" onclick="fn_emailCheck()">중복 체크</button>
+        <button class="emailCheck" type="button" id="emailCheck" onclick="fn_emailCheck()">중복 체크</button> <br>
 
 <!--    <input type="email" id="inputUserEmail" name="userEmail" placeholder="이메일" size="60">-->
 <!--    <button type="button" onclick="fn_emailCheck()" name="emailCheck" class="emailCheck">중복체크</button>-->
-    </div>
+<!--    <input type="email" name="userEmail" placeholder="이메일" size="60" id="userEmail" onblur="emailDuplicate()">-->
+<!--    <span id="email-dup-result"></span>-->
     <input type="text" name="userNickName" placeholder="닉네임" size="60"> <br>
     <input type="password" name="password" placeholder="비밀번호" id="password1" size="60"> <br>
     <input type="password" name="checkPassword" placeholder="비밀번호 확인" id="password2" size="60"> <br>
@@ -155,33 +42,57 @@
 <script type="text/javascript">
 
     // 이메일 중복 확인
-    function fn_emailCheck() {
-        console.log("123")
+    // function fn_emailCheck() {
+    //     console.log("123")
+    //     $.ajax({
+    //         url: "/user/emailCheck", <!--경로 설정-->
+    //         type: "POST",
+    //         dataType: "JSON",
+    //         data : {"userEmail" : $("#inputUserEmail").val()}, <!---->
+    //         success: function (data) {
+    //             console.log(data.userEmail)
+    //             console.log("456")
+    //
+    //             if (data == 1) {
+    //                 alert("중복된 이메일입니다.");
+    //             } else if (data == 0) {
+    //                 $("#emailCheck").attr("value", "Y");
+    //                 alert("사용 가능한 이메일입니다.")
+    //             }
+    //
+    //         },
+    //         error: function (data){
+    //             console.log(data.userEmail)
+    //
+    //             console.log("777")
+    //         }
+    //
+    //     })
+    //     console.log("789")
+    // }
+    function fn_emailCheck(){
+        var email = $('userEmail').val();
+        console.log("1")
         $.ajax({
             url: "/user/emailCheck",
-            type: "POST",
-            dataType: "JSON",
-            data: {"userEmail": $("#inputUserEmail").val()},
-            success: function (data) {
-                console.log(data.userEmail)
-                console.log("456")
-
-                if (data == 1) {
-                    alert("중복된 이메일입니다.");
-                } else if (data == 0) {
-                    $("#emailCheck").attr("value", "Y");
-                    alert("사용 가능한 이메일입니다.")
+            type: 'post',
+            data: {email:email},
+            success:function (cnt){
+                console.log("2")
+                if(cnt == 0){
+                    console.log("3")
+                    alert("사용 가능한 이메일 입니다.")
+                }else{
+                    console.log("4")
+                    alert("사용 불가능한 이메일 입니다.")
                 }
-
             },
-            error: function (data){
-                console.log(data.userEmail)
-
-                console.log("777")
+            error:function (){
+                console.log("5")
+                alert("에러입니다");
             }
-
         })
-        console.log("789")
+        console.log("6")
     }
 
 
@@ -206,7 +117,30 @@
     function back(){
         history.back();
     } <!--뒤로 가기-->
-
+    // const emailDuplicate = () => {
+    //     const email = document.getElementById("userEmail").value;
+    //     const checkResult = document.getElementById("email-dup-result");
+    //     $.ajax({
+    //         type: "post",
+    //         url: "user/emailCheck",
+    //         dataType: "email",
+    //         data: {
+    //             "userEmail": email
+    //         },
+    //         success: function (result) {
+    //             if (result == "ok"){
+    //                 checkResult.innerHTML = "사용가능합니다.";
+    //                 checkResult.style.color = "green";
+    //             }else{
+    //                 checkResult.innerHTML = "이미 사용중인 이메일 입니다.";
+    //                 checkResult.style.color = "red";
+    //             }
+    //         },
+    //         error: function () {
+    //             alert("ajax 실패");
+    //         }
+    //     })
+    // }
 </script>
 
 </body>

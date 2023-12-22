@@ -1,8 +1,7 @@
-package com.ohgiraffers.semilogin.auth.service;
+package com.ohgiraffers.semilogin.service;
 
-import com.ohgiraffers.semilogin.auth.model.AuthDetails;
-import com.ohgiraffers.semilogin.user.model.dto.LoginUserDTO;
-import com.ohgiraffers.semilogin.user.service.MemberService;
+import com.ohgiraffers.semilogin.model.AuthDetails;
+import com.ohgiraffers.semilogin.dto.LoginUserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,6 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+
+// 닉네임으로 찾은 유저를 로그인 시키는 기능
 
 @Service
 public class AuthService implements UserDetailsService {

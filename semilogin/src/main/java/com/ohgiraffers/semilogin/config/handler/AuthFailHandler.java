@@ -14,6 +14,8 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationFa
 import java.io.IOException;
 import java.net.URLEncoder;
 
+// 로그인 에러발생시 나오는 오류별로 오류내용을 알려주는 출력해주는 기능
+
 @Configuration
 public class AuthFailHandler extends SimpleUrlAuthenticationFailureHandler {
 

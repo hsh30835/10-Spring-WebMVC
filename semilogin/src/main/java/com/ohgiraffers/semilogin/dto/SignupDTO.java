@@ -1,8 +1,8 @@
-package com.ohgiraffers.semilogin.user.model.dto;
-
-import com.ohgiraffers.semilogin.common.UserAuth;
+package com.ohgiraffers.semilogin.dto;
 
 import java.util.Date;
+
+//회원가입 할 사용자의 정보
 
 public class SignupDTO {
 

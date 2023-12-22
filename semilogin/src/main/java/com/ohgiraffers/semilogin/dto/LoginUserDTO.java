@@ -1,11 +1,13 @@
-package com.ohgiraffers.semilogin.user.model.dto;
+package com.ohgiraffers.semilogin.dto;
 
-import com.ohgiraffers.semilogin.common.UserAuth;
+import com.ohgiraffers.semilogin.model.UserAuth;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+
+//로그인 한 사용자의 정보
 
 public class LoginUserDTO {
     private int userCode;

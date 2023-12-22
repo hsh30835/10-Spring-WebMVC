@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ohgiraffers.semilogin.user.dao.UserMapper">
+<mapper namespace="com.ohgiraffers.semilogin.dao.UserMapper">
 
-    <resultMap id="login" type="com.ohgiraffers.semilogin.user.model.dto.LoginUserDTO">
+    <resultMap id="login" type="com.ohgiraffers.semilogin.dto.LoginUserDTO">
         <id property="userCode" column="USER_CODE"/>
         <result property="userEmail" column="USER_EMAIL"/>
         <result property="userNickName" column="USER_NICKNAME"/>
@@ -30,7 +30,7 @@
          WHERE USER_EMAIL=#{userEmail}
     </select>
 
-    <insert id="regist" parameterType="com.ohgiraffers.semilogin.user.model.dto.SignupDTO">
+    <insert id="regist" parameterType="com.ohgiraffers.semilogin.dto.SignupDTO">
         INSERT INTO USER_TABLE(
             USER_EMAIL,
             USER_NICKNAME,
@@ -51,19 +51,19 @@
             now()
         )
     </insert>
-    <update id="findPw">
-        UPDATE USER_TABLE
-           SET
-        USER_PASSWORD = {password}
-         WHERE USER_EMAIL = {userEmail}
-    </update>
-    <select id="findPwCheck" resultType="int">
-        SELECT
-            COUNT(*)
-          FROM USER_TABLE
-         WHERE USER_EMAIL = #{userEmail}
-    </select>
-    <select id="emailCheck" parameterType="com.ohgiraffers.semilogin.user.model.dto.SignupDTO" resultType="int">
+<!--    <update id="findPw">-->
+<!--        UPDATE USER_TABLE-->
+<!--           SET-->
+<!--        USER_PASSWORD = {password}-->
+<!--         WHERE USER_EMAIL = {userEmail}-->
+<!--    </update>-->
+<!--    <select id="findPwCheck" resultType="int">-->
+<!--        SELECT-->
+<!--            COUNT(*)-->
+<!--          FROM USER_TABLE-->
+<!--         WHERE USER_EMAIL = #{userEmail}-->
+<!--    </select>-->
+    <select id="emailCheck" parameterType="com.ohgiraffers.semilogin.dto.SignupDTO">
         SELECT
             COUNT(*)
           FROM USER_TABLE

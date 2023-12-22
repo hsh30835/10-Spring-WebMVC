@@ -1,11 +1,13 @@
-package com.ohgiraffers.semilogin.user.controller;
+package com.ohgiraffers.semilogin.controller;
 
-import com.ohgiraffers.semilogin.user.model.dto.SignupDTO;
-import com.ohgiraffers.semilogin.user.service.MemberService;
+import com.ohgiraffers.semilogin.dto.SignupDTO;
+import com.ohgiraffers.semilogin.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+// 회원가입 요청을 받음
 
 @Controller
 @RequestMapping("/user")
@@ -13,6 +15,7 @@ public class UserController {
     @Autowired
     private MemberService memberService;
 
+    //회원가입
     @GetMapping("/signup")
     public void signup(){
 
@@ -46,5 +49,10 @@ public class UserController {
         int result = memberService.emailCheck(userEmail);
         return result;
     }
+//    @PostMapping("/emailCheck")
+//    public @ResponseBody String emailCheck(@RequestParam String userEmail){
+//        String checkResult = memberService.emailCheck(userEmail);
+//        return checkResult;
+//    }
 
 }

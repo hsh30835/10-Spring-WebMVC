@@ -1,6 +1,6 @@
 package com.ohgiraffers.semilogin.config;
 
-import com.ohgiraffers.semilogin.common.UserAuth;
+import com.ohgiraffers.semilogin.model.UserAuth;
 import com.ohgiraffers.semilogin.config.handler.AuthFailHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -13,6 +13,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+// USER와 ADMIN의 권한을 부여 해주는 기능
+// 로그인에 사용할 세부 정보
+// 로그아웃에 사용할 세부 정보
 
 @Configuration
 @EnableWebSecurity
@@ -34,7 +38,8 @@ public class SecurityConfig {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth ->{ //서버의 리소스에 접근 가능한 권한을 설정함
                     auth.requestMatchers("/auth/login","/user/signup","/auth/fail","/").permitAll();
-                    // /auth/login, /user/signup, /auth/fail, / 는 모두에게 사용할 권한이 있음
+                    // permitAll : 어떠한 사용자든 해당 경로에 접근 할 수 있도록 허용하는 역할
+
                     auth.requestMatchers("/admin/*").hasAnyAuthority(UserAuth.ADMIN.getAuth());
                     // /admin/* 은 ADMIN에 속한 자가 가질 수 있는 권한임
                     auth.requestMatchers("/user/*").hasAnyAuthority(UserAuth.USER.getAuth());
